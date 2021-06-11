@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Tabs":"../../components/tab/tab"
+  },
+  "navigationBarTitleText":"搜索"
+}

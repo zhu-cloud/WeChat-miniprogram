@@ -1,0 +1,107 @@
+/**index.wxss**/
+.swiper {
+  height: 350rpx;
+  width: 100%;
+}
+
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.layout_horizontal {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.layout_horizontal view{
+  text-align: center;
+}
+
+ .img{
+   /* margin: 20px; */
+   position: relative;
+   top: 20rpx;
+  height: 70rpx;
+  width: 70rpx;
+} 
+
+.layout_horizontal view text {
+    font-size: 24rpx;
+}
+
+.layout_horizontal .title {
+    margin: 10rpx;
+    height: 60rpx;
+}
+
+.layout_horizontal view text {
+  font-size: 24rpx;
+}
+
+.layout_horizontal .classifition{
+  margin-top: 10rpx;
+}
+
+.layout_horizontal .title {
+  margin: 10rpx;
+  height: 60rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  font-size: 25rpx;
+}
+
+.layout_horizontal  .class-div{
+  margin: 1rpx;
+  height: 100rpx
+}
+.layout_horizontal  .class-div image{
+  margin: 0 auto;
+}
+.goods-list .item{
+  display: flex;
+  /*元素排成一整行*/
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+  border-bottom: solid 5rpx #eeeeee;
+}
+.goods-list .item .pic{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goods-list .item .pic image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goods-list .item .content{
+  margin-left: 10rpx;
+  /*width: 100%;
+  height: 100%;*/
+}
+.goods-list .item .content .title{
+  font-size: 30rpx;
+}
+.goods-list .item .content .desc{
+  font-size: 25rpx;
+  color: #47cdee;
+  margin-top: 10rpx;
+}
+.goods-list .item .content .detal{
+  font-size: 25rpx;
+  color: #999999;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.goods-list .item .content .price{
+  font-size: 30rpx;
+  color: chocolate;
+  margin-top: 10rpx;
+}
+.goods-list .tip{
+  text-align: center;
+  padding: 20rpx;
+  color: #999999;
+}

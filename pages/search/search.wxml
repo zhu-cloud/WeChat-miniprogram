@@ -1,0 +1,10 @@
+<!--pages/search/search.wxml-->
+<view class="box">
+  <view class="input_sousuo">
+    <input class="sousuo" placeholder="搜索" placeholder-class="center" bindinput="bindkeyInput"></input>
+  </view>
+    <view class="button_box">
+      <button bindtap="buttonListener" class="search" form-type="submit">搜索</button>
+    </view>
+</view>
+<!--<Tabs tabs="{{tabs}}"></Tabs>-->

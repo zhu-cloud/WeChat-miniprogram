@@ -1,0 +1,45 @@
+<!--pages/mine/mine.wxml-->
+<!-- <view class="goods-list">
+    <view class="items" wx:for="{{goodsdata}}" data-goodid="{{item._id}}" wx:key="*this" >
+      <view class="pic">
+        <image src="{{item.goodimage}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="detal">{{item.detal}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+  </view>
+  <view class="tip" wx:if="{{!hasmore}}">小二是有底线的~</view> 
+ </view> -->
+<view class="cart">
+	<view class="content">
+		<!-- 通过 isTouchMove 的值来对应移动位置-->
+		<view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{goodsdata}}" wx:key="item.id" data-goodid="{{item._id}} "bindtap="JumpDetail">
+			<view class="item-left" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
+				<view class="icon-check">
+					<image src="{{noCheck}}"></image>
+				</view>
+				<view class="imgs">
+					<image src="{{item.goodimage}}"></image>
+				</view>
+				<view class="context">
+					<view class="title">{{item.title}}</view>
+					<view class="bottoms">
+						<view class="price">￥{{item.price}}</view>
+						<!-- <view class="num">
+							<view class="opare">-</view>
+							<view class="opare nums">{{item.num}}</view>
+							<view class="opare">+</view>
+						</view> -->
+					</view>
+				</view>
+			</view>
+			<view class="delete" data-id="{{item.id}}" bindtap="delItem">删除</view>
+		</view>
+	</view>
+	<view class="footer">
+
+	</view>
+</view>

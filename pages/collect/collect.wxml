@@ -1,0 +1,15 @@
+<!--pages/collect/collect.wxml-->
+<view class="goods-list">
+    <view class="items" wx:for="{{goodsdata}}" data-goodid="{{item._id}}" wx:key="*this" bindtap="JumpDetail" >
+      <view class="pic">
+        <image src="{{item.goodimage}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="detal">{{item.detal}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+  </view>
+  <!-- <view class="tip" wx:if="{{!hasmore}}">小二是有底线的~</view> -->
+</view>

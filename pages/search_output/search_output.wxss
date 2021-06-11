@@ -1,0 +1,46 @@
+/* pages/search_output/search_output.wxss */
+.goods-list .item{
+  display: flex;
+  /*元素排成一整行*/
+  padding: 30rpx 20rpx;
+  border-bottom: solid 2rpx #eeeeee;
+}
+.goods-list .item .pic{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goods-list .item .pic image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goods-list .item .content{
+  margin-left: 10rpx;
+  /*width: 100%;
+  height: 100%;*/
+}
+.goods-list .item .content .title{
+  font-size: 30rpx;
+}
+.goods-list .item .content .desc{
+  font-size: 25rpx;
+  color: #47cdee;
+  margin-top: 10rpx;
+}
+.goods-list .item .content .detal{
+  font-size: 25rpx;
+  color: #999999;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.goods-list .item .content .price{
+  font-size: 30rpx;
+  color: chocolate;
+  margin-top: 10rpx;
+}
+.goods-list .tip{
+  text-align: center;
+  padding: 20rpx;
+  color: #999999;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "SearchInput":"../../components/SeachInput/search_input"
+  },
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance": 30
+}

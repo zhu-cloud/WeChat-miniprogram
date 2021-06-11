@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Search_box":"../../components/Search_box/Search_box"
+  },
+  "navigationBarTitleText":"搜索结果"
+}

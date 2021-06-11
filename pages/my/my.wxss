@@ -1,0 +1,282 @@
+/* .title-card{
+  background-color: #ED4334;
+  border-radius: 20rpx;
+  height: 400rpx;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+.image_box{
+  align-content: center;
+}
+.userinfo-avatar{
+  margin-left: 300rpx;
+  margin-top: 100rpx;
+  display: flex;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+}
+.login_Box{
+  width: 100%;
+  align-content: center;
+  
+}
+.login{
+  display: flex;
+  text-align: center;
+  border-radius: 40rpx;
+  margin-top: 70rpx;
+  width: 50%;
+}
+
+/* ---弹窗css--- */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  color: #fff;
+}
+.modal-dialog {
+  width: 72%;
+  position: absolute;
+  top: 30%;
+  left: 14%;
+  background: #fff;
+  border-radius: 12rpx;
+}
+.modal-content{
+  text-align: center;
+}
+.modal-content .show{
+  width: 450rpx;
+  height: 323rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: -118rpx;
+  z-index: 10000;
+}
+.iconWx{
+  width:52rpx;
+  height: 41rpx;
+  padding-right: 20rpx;
+}
+.iconPhone{
+  width:56rpx;
+  height: 56rpx;
+  padding-right: 15rpx;
+}
+.modal-content view:nth-of-type(2){
+  font-size: 38rpx;
+  color: #333333;
+  line-height: 1;
+}
+.modal-content view:nth-of-type(3){
+  font-size: 26rpx;
+  color: #9c9c9c;
+  margin: 18rpx 0 29rpx;
+  line-height: 1;
+}
+.modal-content button:nth-of-type(1){
+  width: 80%;
+  height: 80rpx;
+  border-radius: 60rpx;
+  margin: 0 auto 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #31cc32;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+.modal-content button:nth-of-type(1)::after{
+  border: none;
+}
+.modal-content  .wxLogin{
+  font-size: 26rpx;
+  color: #424242;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 38rpx 0 80rpx;
+} 
+button::after{
+  border: none;
+}
+.nickname_box{
+  width: 100%;
+  height: 20rpx;
+  align-content: center;
+}
+userinfo-nickname{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 70rpx;
+}
+.title-card view .touxiang{
+  margin-top: 100rpx; 
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  /* background-color: white; */
+}
+.link{
+  height: 5rpx;
+  background-color: #ECECEC;
+  width: 95%;
+  position: relative;
+  left: 20rpx;
+}
+.box{
+  position: relative;
+  top: 20rpx;
+  /* height: 400rpx;  */
+  width:100%;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.box .box-span{
+  height: 80rpx;
+   margin: 20rpx; 
+   padding: 10rpx;
+   margin: 10rpx;
+   /* margin-top: 10rpx; */
+   border-bottom: solid 5rpx #eeeeee;
+}
+.box view .left{
+  position: relative;
+  top: 7rpx;
+  left: 30rpx;
+  font-size: 35rpx;
+}
+.box view .right{
+  position: relative;
+  float: right;
+  top: 7rpx;
+  right: 20rpx;
+}
+
+.box view image{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+} 
+
+.box2{
+  position: relative;
+  top: 50rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.box2 text{
+  position: absolute; 
+  top: 25rpx;
+  left: 50rpx;
+  font-size: 35rpx;
+}
+
+.box3{
+  position: relative;
+  top: 80rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.box3 text{
+  position: relative; 
+  top: 25rpx;
+  left: 50rpx;
+  font-size: 35rpx;
+}
+.box4{
+  position: relative;
+  top: 80rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.box4 text{
+  position: relative; 
+  top: 25rpx;
+  left: 50rpx;
+  font-size: 35rpx;
+}
+.box5{
+  position: relative;
+  top: 80rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.box5 text{
+  position: relative; 
+  top: 25rpx;
+  left: 50rpx;
+  font-size: 35rpx;
+}
+.button{
+  position: relative;
+  top: 140rpx;
+  width: 130rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  padding: 0rpx;
+}
+/* pages/my/my.wxss */
+.user_info_wrap{
+  height: 45vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--themeColor);
+}
+.user_bg{
+  width: 100%;
+  height: 50vh;
+  /*高斯模糊*/
+  filter: blur(10rpx);
+}
+.user_img_wrqp{
+  position: relative;
+}
+.user_info{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  text-align: center;
+}
+.user_icon{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.user_name{
+  color: #fff;
+  margin-top: 20rpx;
+  font-size: 40rpx;
+}
+.login{
+  display: flex;
+  border-radius: 40rpx;
+  margin-top: 20rpx;
+  width: 250rpx;
+  font-size: 38rpx;
+}

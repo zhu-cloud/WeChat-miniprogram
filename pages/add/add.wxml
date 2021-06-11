@@ -1,0 +1,45 @@
+<view style='height:40rpx'></view>
+<van-nav-bar
+  title="标题"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+
+<form bindsubmit="formSubmit">
+  <view class='top-card'>
+  <view class='title'>
+    <input name="title" placeholder="标题"></input>
+  </view>
+  <view class='link'></view>
+  <view class='desc'>
+    <input name="desc" placeholder="品牌"></input>
+  </view>
+  <view class='link'></view>
+  <view class='describle'>
+  <!-- <input name="describle" placeholder='商品描述'></input> -->
+  <textarea name="detail"  placeholder="商品描述" />
+  </view>
+
+  <view class='img-span'>
+    <image wx:for="{{imgbox}}" src='{{item}}' class='img'></image>
+    <image src='/img/add_image.png' bindtap='addPic' class='img'></image>
+  </view> 
+</view>
+<view class='buttom-card'>
+   <view class='span'>
+   <input name="price" placeholder='价格' type='digit'></input>
+   </view> 
+  <view class='link'></view>
+
+   <view class='span'> 
+   <picker bindchange="bindPickerChange" range-key='name' range="{{objectArray}}" value='{{index}}'>
+      分类:<text>{{objectArray[index].name}}</text>
+  </picker>
+   </view>   
+</view>
+
+<view class='buttom'>
+  <button form-type='submit'>确认发布</button>
+</view>
+</form>

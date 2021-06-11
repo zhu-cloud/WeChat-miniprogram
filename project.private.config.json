@@ -1,0 +1,59 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "我的主页",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "发布",
+          "pathName": "pages/add/add",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "my",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": 5,
+          "name": "分类",
+          "pathName": "pages/classInfo/classInfo",
+          "query": "classId=1"
+        },
+        {
+          "id": 4,
+          "name": "test",
+          "pathName": "pages/test/test",
+          "query": ""
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "评论",
+          "pathName": "pages/preview/preview",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

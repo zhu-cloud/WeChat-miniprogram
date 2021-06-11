@@ -1,0 +1,68 @@
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000">    
+  <block wx:for="{{imgUrls}}" wx:for-index="index">    
+    <swiper-item>
+     <image src="{{item}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>
+</swiper> 
+<SearchInput></SearchInput>
+
+<view class='layout_horizontal'>
+  <view style='flex:1'>
+  <navigator url='/pages/classInfo/classInfo?class=电子产品'>
+     <image class='img' src='/img/phone.png'></image> 
+  </navigator>
+  </view>
+  <view style='flex:1;'>
+  <navigator url='/pages/classInfo/classInfo?class=书籍'>
+     <image class='img' src='/img/book.png'></image>
+  </navigator>
+  </view>
+  <view style='flex:1;'>
+  <navigator url='/pages/classInfo/classInfo?class=衣服'>
+     <image class='img' src='/img/clothes.png'></image>
+  </navigator> 
+  </view>
+  <view style='flex:1'>
+    <navigator url='/pages/classInfo/classInfo?class=*'>
+     <image class='img' src='/img/more.png'></image> 
+    </navigator>
+  </view>   
+</view>
+
+<view class='layout_horizontal'>
+  <view style='flex:1' class='classifition'>
+    <text>电子产品</text>
+  </view>
+  <view style='flex:1' class='classifition'>
+    <text>书籍</text>
+  </view>
+  <view style='flex:1' class='classifition'>
+    <text>服装</text>
+  </view>
+ <view style='flex:1' class='classifition'>
+    <text>更多</text>
+  </view>
+</view>
+
+<view class='layout_horizontal'>
+  <button bindtap='handleItem' class='title' id="0" style='flex:1'>最新</button>
+  <button bindtap='handleItem' class='title' id="1" style='flex:1'>热门</button>
+</view>
+
+
+<view class="goods-list">
+    <view class="item" wx:for="{{goodsData}}" data-goodid="{{item._id}}" bindtap="JumpDetail">
+      <view class="pic">
+        <image src="{{item.goodimage}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="detal">{{item.detal}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+  </view>
+  <view class="tip" wx:if="{{!hasmore}}">小二是有底线的~</view>
+</view>
+

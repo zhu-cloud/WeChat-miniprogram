@@ -1,0 +1,279 @@
+<!--pages/goodsInfo/goodsInfo.wxml
+<view class='goods'>
+  <view class='user-info'>
+    <image class='user-img' src='{{background[0]}}'></image>
+    <view class='user-name'>{{goodsInfo.userName}}</view>
+    <view class='user-date'>{{goodsInfo.date}}</view>
+  </view>-->
+
+  <!-- 下划线 -->
+ <!--  <view class='link'></view>
+
+  <view class='goods-info'>
+    <text>
+      {{goodsInfo.describle}}
+    </text>
+  </view>
+ <view class='goods-img'> 
+  <image wx:for="{{goodsInfo.goodsImgList}}"   src='{{item}}'></image>
+ </view> 
+
+</view>
+
+<view class='comments'>
+  <text>留言</text>
+
+  <view class='link'></view>
+
+  <view class='comments-info'>
+      <image class='user-img' src='/img/qq.png'></image>
+      <view>
+        <text class='user-name'>用户名</text>
+        <text class='comments-data'>评论时间</text>    
+      </view>
+      <text class='user-comments-content'>评论内容</text>
+  </view>
+
+  <view class='link'></view>
+
+</view>
+
+<view class='footer'>
+  <view class='left'>
+    <image class='img' src='/img/xiaoxi.png'></image>
+  </view>
+  <view class='right'>
+    <button>我想要</button>
+  </view>
+</view> -->
+<view class='qiu' bindtouchstart="touchstar">
+  <view class='qiu_titleAndUser'>
+    <text class='title'>{{title}}</text>
+    <view class='user'>
+      <image class='userImg' src='{{userImg}}'></image>
+      <text class='userName' style='position: absolute; margin-left:20rpx;'>{{userName}}</text>
+    </view>
+    <view class='text_detail'>{{detal}}</view>
+    <view class="swiper-box">
+      <swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}"
+        interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item bindtap="handerpreview" data-url="{{item}}">
+            <image src="{{item}}"></image>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="tips">
+        <text>{{number}}/{{num}}</text>
+        <!-- text:行内元素 view:块级元素  -->
+      </view>
+    </view>
+    <view class="detal-list">
+      <view class="item">
+        <view class="price">￥{{price}}</view>
+        <view class="xiaoliang">点击量{{click}}</view>
+        <!-- <view class="content">{{detal}}</view> -->
+        <view class="bottom-nav">
+          <view class="tool_item">
+            <iconfont name="kefu"></iconfont>
+            <!-- <view class="iconfont icon-kefu"></view> -->
+            <button class="button" open-type="contact" plain="true"></button>
+            <view>联系客服</view>
+          </view>
+          <view class="tool_item">
+            <iconfont name="fenxiang"></iconfont>
+            <button class="button" open-type="share" plain="true">
+            </button>
+            <!-- <view class="iconfont icon-fenxiang"></view> -->
+            <view>分享</view>
+          </view>
+          <!-- <view class="tool_item" bindtap="My_collect">
+          <view class="iconfont icon-wodeshoucang"></view>
+          <view>收藏</view>
+        </view> -->
+          <view class="tool_item" bindtap="collect">
+            <iconfont wx:if="{{collect}}" name="shoucang"></iconfont>
+            <iconfont wx:else name="collection"></iconfont>
+            <!-- <view class="iconfont icon-collection"></view> -->
+            <view>收藏</view>
+          </view>
+          <view class="tool_item btn_cart" bindtap="show_collect">
+            我的收藏
+          </view>
+          <view class="tool_item btn_buy" bindtap="buy">
+            购买
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <!-- <view class='three_view'>
+          <image bindtap='addWantImg' class='countImg' src='../../resources/images/anscount.png'></image>
+          <text class='count'>{{count}}</text>
+        </view>
+        <view class='three_view'>
+          <text class='time'>{{time}}</text>
+        </view> -->
+    </view>
+<view class='reply'>
+  <view class='replyUser' wx:for="{{wantReplay}}" wx:key="{{index}}" bindtouchstart="touchstar">
+    <block wx:if="{{item.openID == openid }}">
+      <!-- && item.state === true -->
+      <image class='userImg' src='{{item.URL}}'></image>
+      <text class='userName' style='position: absolute; margin-left:20rpx;'>{{item.userName}}</text>
+      <view class='reply_content' data-replyuserid='{{item.openID}}' data-replyname='{{item.userName}}'
+        bindtap='getReplyUserID'>{{item.comment_detal}}</view>
+      <!-- <view class='reply_time'>{{item.time}}</view> -->
+    </block>
+    <block wx:else>
+      <image class='userImg' src='{{item.URL}}'></image>
+      <view class='huifu'>
+        <text class='userName'>{{item.userName}}</text>
+        <text class='huifu_text'>回复@{{userName}}</text>
+        <!-- <text class='userName'>{{item.replyName}}</text> -->
+      </view>
+      <view class='reply_content' data-replyuserid='{{item.openID}}' data-replyname='{{item.userName}}'
+        bindtap='getReplyUserID'>{{item.comment_detal}}</view>
+      <!-- <view class='reply_time'>{{item.time}}</view> -->
+    </block>
+  </view>
+</view>
+<view class='ask'>
+  <block wx:if="{{check}}">
+    <input class='input' type='text' placeholder='我来评论' bindinput='contentInp' value='{{contentInp}}'
+      focus='{{focus}}'></input>
+    <button class='button' bindtap='addWant'>评论</button>
+  </block>
+  <block wx:else>
+    <input class='input' type='text' placeholder='回复@{{reply}}' bindinput='replyInp' value='{{replyInp}}'
+      focus='{{focus}}'></input>
+    <button class='button' bindtap='addWant'>评论</button>
+  </block>
+</view>
+
+<!-- pages/detal/detal.wxml -->
+<!--商品详请幻灯片-->
+<!-- <view class="page-box"> -->
+  <!--幻灯片 start-->
+   <!-- <view class="swiper-box">
+     <swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" 
+     duration="{{duration}}"> 
+       <block wx:for="{{background}}" wx:key="*this"> 
+        <swiper-item bindtap="handerpreview" data-url="{{item}}">
+          <image src="{{item}}"></image>
+          <view class="swiper-item {{item}}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="tips">
+      <text>{{number}}/3</text> -->
+      <!-- text:行内元素 view:块级元素  -->
+    <!-- </view>
+  </view> -->
+  <!--商品信息-->
+  <!-- <view class="detal-list">
+    <view class="item">
+      <view class="price">{{price}}</view>
+      <view class="xiaoliang">点击量{{click}}</view>
+      <view class="content">{{detal}}</view>
+      <view class="icon">
+        <view class="iconfont icon-wodeyouhuiquan">我的优惠券</view>
+        <view class="iconfont icon-fenxiang">分享</view>
+      </view>
+    </view>
+  </view> -->
+  <!--地址-->
+  <!-- <view class="address"></view> -->
+  <!--商品详请-->
+  <!-- <view class="details-box"></view> -->
+  <!--底部导航-->
+  <!-- <view class="bottom-nav"> 
+    <view class="tool_item">
+      <iconfont name="kefu"></iconfont> -->
+      <!-- <view class="iconfont icon-kefu"></view> -->
+      <!-- <button class="button" open-type="contact" plain="true"></button>
+      <view>联系卖家</view>
+    
+    </view>
+    <view class="tool_item"> 
+      <iconfont name="fenxiang"></iconfont>
+       <button class="button" open-type="share"  plain="true" >
+       </button> -->
+      <!-- <view class="iconfont icon-fenxiang"></view> -->
+      <!-- <view>分享</view>
+    </view> -->
+    <!-- <view class="tool_item" bindtap="My_collect">
+      <view class="iconfont icon-wodeshoucang"></view>
+      <view>收藏</view>
+    </view> -->
+    <!-- <view class="tool_item" bindtap="collect">
+      <iconfont wx:if="{{collect}}" name="shoucang"></iconfont>
+      <iconfont wx:else name="collection"></iconfont> -->
+      <!-- <view class="iconfont icon-collection"></view> -->
+      <!-- <view>收藏</view>
+    </view>
+    <view class="tool_item btn_cart" bindtap="show_collec">
+      我的收藏
+    </view>
+    <view class="tool_item btn_buy" >
+      立即购买
+    </view>
+  </view>
+</view> -->
+<!--遮罩-->
+<view class='mask' hidden='{{mask}}' catchtap='hideAllBox'></view>
+<!--购物车弹窗-->
+<view class='lay-box detail-cart {{!cartBox ? "on" : ""}}'> 
+	<view class='box-cart-title'>
+		<image src="{{data.item_img[0][0]}}" class='box-img'></image>
+		<view class='price-box'>
+			<!--价格库存-->
+			<view class='price'>{{price}}</view> 
+			<!-- <view class="sales">库存(99)</view> -->
+			<!--右上角关闭按钮-->
+			<text class='lay-close' bindtap='showCart'>×</text> 
+		</view>
+	</view>
+	<scroll-view scroll-y class='box-content'>
+		<!-- 单规格选择 -->
+		<view wx:if='{{danguige}}' class='box-spec'> 
+			<view class='cor-grey'>规格</view>
+			<view class='spec-items'>
+				<!--规格列表-->
+				<view class='spec-item {{specActive == item.id ? "on" : ""}}' wx:for="{{guigelist}}" wx:key="*this" data-gui_id="{{item.id}}" data-item_id="{{item.item_id}}" data-price="{{item.price}}" data-inventory="{{item.inventory}}" data-limit="{{item.limit_number}}" bindtap="OneSelectSpec">{{item.guige}}</view>
+			</view>
+		</view> 
+ 
+ 
+		<!--多规格-多属性选择-->
+		<view wx:if='{{duoguige}}' class='box-spec' wx:for="{{data.sku_list}}" wx:key="*this" wx:for-index="boxindex">
+			<view class='cor-grey'>{{item.name}}</view>
+			<view class='spec-items'>
+				<!--属性列表-->
+			 <button class='spec-item {{attr.isHasSpec ? "on" : ""}} {{attr.isCould ? "" : "grey"}}' disabled="{{!attr.isCould}}" wx:for="{{item.list}}" wx:for-item="attr" wx:key="*this" data-gui_id="{{attr.id}}" data-item_id="{{attr.sp_value_id}}" data-num="{{attr.num}}" data-index="{{boxindex}}" data-index_x="{{index}}" data-attr="{{attr}}" data-spname="{{attr.sp_value_name}}" bindtap="selectSpec">
+					商品
+				</button>
+			</view>
+		</view>
+ 
+		<!--选择数量-->
+		<view class='updown-box jus-b ali-c'> 
+			<view class='cor-grey'>数量</view>
+			<!--商品数量加减按钮-->
+			<view class='updown flexc'>
+				<!--减-->
+				<view class='down' hover-class='button-hover' bindtap='reduceNumber'> 
+					<text>-</text>
+				</view>
+				<!--输入框-->
+				<input type='number' class='nums' value='{{goodsNumber}}' bindinput="inputValueChange"></input>
+				<!--加-->
+				<view class='up' hover-class='button-hover' bindtap='addNumber'>
+					<text>+</text>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+	<view class='box-btn' bindtap='cartBoxClick'>确定</view>
+</view>
